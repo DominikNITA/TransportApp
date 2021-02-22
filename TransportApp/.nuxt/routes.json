@@ -1,0 +1,16 @@
+[
+  {
+    "name": "itinerary",
+    "path": "/itinerary",
+    "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\itinerary.vue",
+    "chunkName": "pages/itinerary",
+    "_name": "_77b58412"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_5b31efd9"
+  }
+]

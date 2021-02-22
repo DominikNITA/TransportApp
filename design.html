@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/tailwind.css" rel="stylesheet">
+    <title>Transport design</title>
+    <script src="https://kit.fontawesome.com/648c2563d3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="main flex flex-col h-screen bg-gray-200 justify-between">
+        <div class="bg-gray-100">
+            <div class="flex flex-row justify-between">
+                <div id="logo" class="text-yellow-400 text-3xl font-semibold flex items-center p-3">Transport App</div>
+                <div class="flex flex-col">
+                    <div class="grid grid-cols-3 divide-x divide-gray-300 py-5 w-full space-x-2">
+                        <div class="socials flex justify-around">
+                            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+                        </div>
+                        <div class="language flex justify-center">
+                            <select name="lang" id="lang">
+                                <option value="en">English</option>
+                                <option value="fr">French</option>
+                            </select>
+                        </div>
+                        <div class="profile flex justify-center items-center">
+                            <i class="fas fa-user mr-2"></i>
+                            <span>Connect</span>
+                        </div>
+                    </div>
+                    <hr class="">
+                    <div class="flex text-gray-500 text-xl space-x-6 font-medium pr-10">
+                        <div class="border-b-4 border-yellow-400 py-5">Itinerary</div>
+                        <div class="py-5">Timetable</div>
+                        <div class="py-5">About</div>
+                        <div class="py-5 text-yellow-400">Contact me!</div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-between">
+                <span class="flex flex-auto items-center bg-gray-700 text-gray-100 text-5xl px-10">
+                    Itinerary
+                </span>
+                <span class="bg-yellow-400 w-10 h-28"></span>
+            </div>
+            <div class="flex px-12 py-4 justify-between">
+                <div class="flex items-center space-x-2 text-sm">
+                    <span>Menu</span>
+                    <span class="rounded-full bg-yellow-400 w-1 h-1"></span>
+                    <span class="font-medium">Itinerary</span>
+                </div>
+                <div class="weather space-x-1">
+                    <i class="fas fa-cloud-sun"></i>
+                    <span class="text-red-300 font-bold">10&#176;C</span>
+                    <span class="text-blue-300 font-bold">7&#176;C</span>
+                    <span class="font-medium">Paris</span>
+                </div>
+            </div>
+        </div>
+        <div class="flex bg-blue-100">
+            <div id="map" class="">
+                Placeholder map
+            </div>
+        </div>
+        <footer class="flex justify-end text-lg bg-gray-700 text-gray-100 px-4">
+            Transport App <span class="font-medium ml-4 text-yellow-400"> Dominik Nita 2021</span>
+        </footer>
+    </div>
+</body>
+
+</html>
