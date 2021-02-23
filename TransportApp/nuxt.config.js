@@ -7,7 +7,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/png', href: '/icon-small.png' }],
     script: [{ src: 'https://kit.fontawesome.com/648c2563d3.js' }],
   },
 
@@ -30,6 +30,8 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    '@nuxtjs/axios',
+    '@nuxtjs/auth-next',
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -37,8 +39,15 @@ export default {
     manifest: {
       lang: 'en',
     },
+    icon: {
+      fileName: 'icon.png?v1'
+    }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  serverMiddleware: {
+    '/api': '~/api',
+  },
 }

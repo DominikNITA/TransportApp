@@ -7,5 +7,14 @@
   },
   "Logo": {
     "description": "Auto imported from components/Logo.vue"
+  },
+  "TitleBar": {
+    "description": "Auto imported from components/TitleBar.vue"
+  },
+  "UserAuthForm": {
+    "description": "Auto imported from components/UserAuthForm.vue"
+  },
+  "WeatherWidget": {
+    "description": "Auto imported from components/WeatherWidget.vue"
   }
 }

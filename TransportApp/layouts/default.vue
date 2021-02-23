@@ -1,7 +1,8 @@
 <template>
-  <div>
+  <div class="min-h-screen flex flex-col">
     <Header />
-    <div class="main flex flex-col h-screen bg-gray-200 justify-between">
+    <TitleBar/>
+    <div class="main flex flex-col flex-grow bg-gray-200 justify-center">
       <Nuxt />
     </div>
     <Footer />
@@ -19,6 +20,9 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  --highlight-color: #f6ad55;
+  --main-color: #4a5568;
+  --central-part-width: 58rem;
 }
 
 *,
@@ -55,5 +59,17 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.central-part{
+  max-width: var(--central-part-width);
+}
+.side-part{
+  width: calc((100% - var(--central-part-width))/2);
+  min-width: 20px;
+}
+
+.highlight-text{
+  color: var(--highlight-color)
 }
 </style>
