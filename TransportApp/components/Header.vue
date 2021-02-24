@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center w-full">
+  <div app class="flex justify-center items-center w-full">
     <div class="central-part flex flex-row justify-between w-full">
       <NuxtLink to="/" id="logo">
         <Logo />
@@ -31,7 +31,7 @@
             </div>
           </div>
         </div>
-        <hr class="" />
+        <hr class=""/>
         <div
           class="navbar flex pt-5 text-gray-700 text-xl space-x-6 font-medium pr-10"
         >

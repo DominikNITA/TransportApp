@@ -11,6 +11,9 @@
   "TitleBar": {
     "description": "Auto imported from components/TitleBar.vue"
   },
+  "Toggle": {
+    "description": "Auto imported from components/Toggle.vue"
+  },
   "UserAuthForm": {
     "description": "Auto imported from components/UserAuthForm.vue"
   },

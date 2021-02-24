@@ -24,6 +24,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    // '@nuxtjs/vuetify',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -40,8 +41,8 @@ export default {
       lang: 'en',
     },
     icon: {
-      fileName: 'icon.png?v1'
-    }
+      fileName: 'icon.png?v1',
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

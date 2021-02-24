@@ -10,5 +10,6 @@ You can directly use them in pages and other components without the need to impo
 - `<Header>` | `<header>` (components/Header.vue)
 - `<Logo>` | `<logo>` (components/Logo.vue)
 - `<TitleBar>` | `<title-bar>` (components/TitleBar.vue)
+- `<Toggle>` | `<toggle>` (components/Toggle.vue)
 - `<UserAuthForm>` | `<user-auth-form>` (components/UserAuthForm.vue)
 - `<WeatherWidget>` | `<weather-widget>` (components/WeatherWidget.vue)

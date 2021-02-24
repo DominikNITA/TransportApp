@@ -5,6 +5,7 @@ const components = {
   Header: () => import('../..\\components\\Header.vue' /* webpackChunkName: "components/header" */).then(c => c.default || c),
   Logo: () => import('../..\\components\\Logo.vue' /* webpackChunkName: "components/logo" */).then(c => c.default || c),
   TitleBar: () => import('../..\\components\\TitleBar.vue' /* webpackChunkName: "components/title-bar" */).then(c => c.default || c),
+  Toggle: () => import('../..\\components\\Toggle.vue' /* webpackChunkName: "components/toggle" */).then(c => c.default || c),
   UserAuthForm: () => import('../..\\components\\UserAuthForm.vue' /* webpackChunkName: "components/user-auth-form" */).then(c => c.default || c),
   WeatherWidget: () => import('../..\\components\\WeatherWidget.vue' /* webpackChunkName: "components/weather-widget" */).then(c => c.default || c)
 }
