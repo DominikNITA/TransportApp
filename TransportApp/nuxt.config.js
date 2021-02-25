@@ -33,6 +33,7 @@ export default {
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
+    '@nuxt/http',
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -50,5 +51,18 @@ export default {
 
   serverMiddleware: {
     '/api': '~/api',
+  },
+
+  /*
+   ** For deployment you might want to edit host and port
+   */
+  // server: {
+  //   port: 8000, // default: 3000
+  //   host: '0.0.0.0', // default: localhost
+  // },
+
+  http: {
+    //https://http.nuxtjs.org/options
+    port: 3001,
   },
 }

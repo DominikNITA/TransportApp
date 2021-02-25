@@ -1,9 +1,11 @@
 <template>
   <div ref="headerBar" class="flex justify-center items-center w-full bg-white">
     <div class="central-part flex flex-row justify-between w-full">
-      <NuxtLink to="/" id="logo" class="flex-auto items-center justify-center">
-        <Logo />
-      </NuxtLink>
+      <div class="flex-auto items-center justify-center">
+        <NuxtLink to="/" id="logo">
+          <Logo />
+        </NuxtLink>
+      </div>
       <div class="flex flex-col">
         <div class="flex py-5 w-full justify-end space-x-8">
           <div class="socials flex justify-around w-24">
