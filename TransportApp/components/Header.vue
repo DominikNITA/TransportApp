@@ -1,7 +1,7 @@
 <template>
-  <div app class="flex justify-center items-center w-full">
+  <div ref="headerBar" class="flex justify-center items-center w-full bg-white">
     <div class="central-part flex flex-row justify-between w-full">
-      <NuxtLink to="/" id="logo">
+      <NuxtLink to="/" id="logo" class="flex-auto items-center justify-center">
         <Logo />
       </NuxtLink>
       <div class="flex flex-col">
@@ -31,9 +31,9 @@
             </div>
           </div>
         </div>
-        <hr class=""/>
+        <hr class="" />
         <div
-          class="navbar flex pt-5 text-gray-700 text-xl space-x-6 font-medium pr-10"
+          class="navbar flex pt-5 text-gray-700 text-xl space-x-6 font-medium"
         >
           <NuxtLink to="/itinerary">Itinerary</NuxtLink>
           <NuxtLink to="/timetable" class="">Timetable</NuxtLink>
@@ -45,6 +45,34 @@
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      sticky: 0,
+    }
+  },
+  methods: {
+    handleScroll() {
+      if (window.pageYOffset > this.sticky) {
+        this.$refs.headerBar.classList.add('sticky')
+      } else {
+        this.$refs.headerBar.classList.remove('sticky')
+      }
+    },
+  },
+  mounted() {
+    this.$nextTick(function () {
+      this.sticky = this.$refs.headerBar.offsetTop
+      window.addEventListener('scroll', this.handleScroll)
+    })
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+}
+</script>
+
 <style scoped>
 a.nuxt-link-active:not(#logo) {
   border-bottom-width: 5px;
@@ -53,5 +81,11 @@ a.nuxt-link-active:not(#logo) {
 .navbar * {
   padding-bottom: 1.25rem;
   font-size: 1.1875em;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 </style>

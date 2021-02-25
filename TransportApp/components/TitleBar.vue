@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col">
+  <div id="title-bar" class="flex flex-col">
     <div class="flex items-stretch">
       <span class="side-part bg-gray-700"></span>
       <div class="central-part flex flex-grow">
@@ -78,5 +78,9 @@ a.nuxt-link-exact-active {
 #side-panel{
   background-color: var(--highlight-color);
   min-height: 8rem;
+}
+
+.sticky + #title-bar{
+  padding-top: 8.5rem;
 }
 </style>

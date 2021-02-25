@@ -62,7 +62,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"TransportApp","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"hid":"charset","charset":"utf-8"},{"hid":"mobile-web-app-capable","name":"mobile-web-app-capable","content":"yes"},{"hid":"apple-mobile-web-app-title","name":"apple-mobile-web-app-title","content":"TransportApp"},{"hid":"og:type","name":"og:type","property":"og:type","content":"website"},{"hid":"og:title","name":"og:title","property":"og:title","content":"TransportApp"},{"hid":"og:site_name","name":"og:site_name","property":"og:site_name","content":"TransportApp"},{"hid":"og:description","name":"og:description","property":"og:description","content":"## Build Setup"}],"link":[{"rel":"icon","type":"image\u002Fpng","href":"\u002Ficon-small.png"},{"rel":"manifest","href":"\u002F_nuxt\u002Fmanifest.29351a38.json","hid":"manifest"}],"script":[{"src":"https:\u002F\u002Fkit.fontawesome.com\u002F648c2563d3.js"}],"style":[],"htmlAttrs":{"lang":"en"}},
+    head: {"title":"TransportApp","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fpng","href":"\u002Ficon-small.png"}],"script":[{"src":"https:\u002F\u002Fkit.fontawesome.com\u002F648c2563d3.js"}],"style":[]},
 
     router,
     nuxt: {
