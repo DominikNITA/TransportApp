@@ -1,6 +1,6 @@
 <template>
   <label class="switch">
-    <input type="checkbox" v-model="model" />
+    <input type="checkbox" v-bind:checked="model" v-on:change="$emit('change', $event.target.checked)"/>
     <span class="slider round"></span>
     <span class="first">{{ firstOption }}</span>
     <span class="second">{{ secondOption }}</span>
@@ -39,8 +39,8 @@ export default {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0);
   border: 1px white solid;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
 }
 
 .first,
@@ -52,7 +52,7 @@ export default {
   text-align: center;
   color: white;
   z-index: 10;
-  transition: 0.4s;
+  transition: 0.35s;
   font-weight: 800;
   user-select: none;
 }
@@ -74,8 +74,8 @@ export default {
   left: 0px;
   top: 0px;
   background-color: rgba(255, 255, 255, 1);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.35s;
+  transition: 0.35s;
 }
 
 input:focus + .slider {
@@ -83,16 +83,12 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  /* -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px); */
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
   transform: translateX(100%);
 }
 
-input:checked ~ .second {
-  color: var(--main-color);
-}
-
-.first:not(input:checked ~ .first) {
+input:checked ~ .second, .first:not(input:checked ~ .first) {
   color: var(--main-color);
 }
 

@@ -1,12 +1,12 @@
 <template>
-  <v-app class="min-h-screen flex flex-col">
+  <div class="min-h-screen flex flex-col">
     <Header />
     <TitleBar/>
     <div class="main flex flex-col flex-grow bg-gray-200 justify-center">
       <Nuxt />
     </div>
     <Footer />
-  </v-app>
+  </div>
 </template>
 
 <style>
@@ -71,6 +71,10 @@ html {
 
 .highlight-text{
   color: var(--highlight-color)
+}
+
+.main-text{
+  color: var(--main-color);
 }
 
 .main-bg{
