@@ -9,6 +9,7 @@ You can directly use them in pages and other components without the need to impo
 - `<Footer>` | `<footer>` (components/Footer.vue)
 - `<Header>` | `<header>` (components/Header.vue)
 - `<Logo>` | `<logo>` (components/Logo.vue)
+- `<StationInput>` | `<station-input>` (components/StationInput.vue)
 - `<TitleBar>` | `<title-bar>` (components/TitleBar.vue)
 - `<Toggle>` | `<toggle>` (components/Toggle.vue)
 - `<UserAuthForm>` | `<user-auth-form>` (components/UserAuthForm.vue)

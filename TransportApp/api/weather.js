@@ -4,6 +4,7 @@ const cors = require('cors')
 
 //https://flaviocopes.com/express-cors/
 router.get('/weather', cors(), (req, res) => {
+  console.log("Retrieving temps!")
   const date = new Date()
   const d = date.getDate()
   const baseTemp = 3

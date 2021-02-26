@@ -3,9 +3,9 @@
     <div class="flex bg-red-100">
       <div
         id="itinerary-form-wrapper"
-        class="main-bg text-gray-300 p-6 flex flex-col flex-stretch"
+        class="main-bg text-gray-300 px-6 py-2 flex flex-col"
       >
-        <h3 class="font-bold text-4xl text-center pb-7">Where to?</h3>
+        <h3 class="font-bold text-4xl text-center pb-6">Where to?</h3>
         <form
           id="itinerary"
           method="post"
@@ -19,25 +19,18 @@
             </ul>
           </div>
 
-          <p>
-            <label for="from">From</label>
-            <input
-              type="text"
-              name="from"
-              id="from"
-              v-model="from"
+          <p class="space-y-2">
+            <StationInput
+              :model="from"
               placeholder="station, place"
+              label="From"
+              @input="changeFromStation($event)"
             />
-          </p>
-
-          <p>
-            <label for="to">To</label>
-            <input
-              type="text"
-              name="to"
-              id="to"
-              v-model="to"
-              placeholder="station,place"
+            <StationInput
+              :model="to"
+              placeholder="station, place"
+              label="To"
+              @input="changeToStation($event)"
             />
           </p>
           <p>
@@ -89,6 +82,12 @@ export default {
     changeIsDateArrival(newState) {
       this.isDateArrival = newState
     },
+    changeFromStation(newStation) {
+      this.from = newStation
+    },
+    changeToStation(newStation) {
+      this.to = newStation
+    },
   },
 }
 </script>
@@ -97,7 +96,7 @@ export default {
 #itinerary-form-wrapper {
   min-width: 22rem;
 }
-#map-wrapper{
+#map-wrapper {
   min-width: 40rem;
   min-height: 55rem;
 }

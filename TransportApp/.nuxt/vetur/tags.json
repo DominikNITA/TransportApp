@@ -8,6 +8,9 @@
   "Logo": {
     "description": "Auto imported from components/Logo.vue"
   },
+  "StationInput": {
+    "description": "Auto imported from components/StationInput.vue"
+  },
   "TitleBar": {
     "description": "Auto imported from components/TitleBar.vue"
   },

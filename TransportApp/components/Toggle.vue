@@ -4,6 +4,7 @@
     <span class="slider round"></span>
     <span class="first">{{ firstOption }}</span>
     <span class="second">{{ secondOption }}</span>
+    <div style="clear:both"></div>
   </label>
 </template>
 
@@ -19,7 +20,8 @@ export default {
   position: relative;
   display: inline-block;
   width: 100%;
-  height: 3rem;
+  height: 2.7rem;
+  overflow: none;
 }
 
 /* Hide default HTML checkbox */
@@ -41,6 +43,7 @@ export default {
   border: 1px white solid;
   -webkit-transition: 0.35s;
   transition: 0.35s;
+
 }
 
 .first,
@@ -76,10 +79,6 @@ export default {
   background-color: rgba(255, 255, 255, 1);
   -webkit-transition: 0.35s;
   transition: 0.35s;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .slider:before {
