@@ -52,7 +52,7 @@
       <div id="map-wrapper"></div>
     </div>
     <NuxtLink
-      to="/itinerary/test"
+      :to="localePath('/itinerary/test')"
       class="bg-red-200 p-2 border-4 border-orange-500"
       >Test page</NuxtLink
     >

@@ -2,7 +2,7 @@
   <div ref="headerBar" class="flex justify-center items-center w-full bg-white">
     <div class="central-part flex flex-row justify-between w-full">
       <div class="flex-auto items-center justify-center">
-        <NuxtLink to="/" id="logo">
+        <NuxtLink :to="localePath('/')" id="logo">
           <Logo />
         </NuxtLink>
       </div>
@@ -42,10 +42,10 @@
         </div>
         <hr class="" />
         <div class="navbar flex text-gray-700 text-xl space-x-6 font-medium">
-          <NuxtLink to="/itinerary">{{ $t('itinerary') }}</NuxtLink>
-          <NuxtLink to="/timetable" class="">{{ $t('timetable') }}</NuxtLink>
-          <NuxtLink to="/about" class="">{{ $t('about') }}</NuxtLink>
-          <NuxtLink to="/contact" class="text-orange-400">{{
+          <NuxtLink :to="localePath('/itinerary')">{{ $t('itinerary') }}</NuxtLink>
+          <NuxtLink :to="localePath('/timetable')" class="">{{ $t('timetable') }}</NuxtLink>
+          <NuxtLink :to="localePath('/about')" class="">{{ $t('about') }}</NuxtLink>
+          <NuxtLink :to="localePath('/contact')" class="text-orange-400">{{
             $t('contactMe')
           }}</NuxtLink>
         </div>
