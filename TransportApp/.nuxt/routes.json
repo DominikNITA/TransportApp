@@ -1,55 +1,111 @@
 [
   {
-    "name": "about",
+    "name": "about___en",
     "path": "/about",
     "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\about\\\\index.vue",
     "chunkName": "pages/about/index",
     "_name": "_5fde20ee"
   },
   {
-    "name": "contact",
+    "name": "contact___en",
     "path": "/contact",
     "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\contact\\\\index.vue",
     "chunkName": "pages/contact/index",
     "_name": "_656a238a"
   },
   {
-    "name": "itinerary",
+    "name": "index___fr",
+    "path": "/fr",
+    "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_5b31efd9"
+  },
+  {
+    "name": "itinerary___en",
     "path": "/itinerary",
     "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\itinerary\\\\index.vue",
     "chunkName": "pages/itinerary/index",
     "_name": "_64150fa0"
   },
   {
-    "name": "login",
+    "name": "login___en",
     "path": "/login",
     "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\login.vue",
     "chunkName": "pages/login",
     "_name": "_24d992f0"
   },
   {
-    "name": "register",
+    "name": "register___en",
     "path": "/register",
     "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\register.vue",
     "chunkName": "pages/register",
     "_name": "_01a35fec"
   },
   {
-    "name": "timetable",
+    "name": "timetable___en",
     "path": "/timetable",
     "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\timetable\\\\index.vue",
     "chunkName": "pages/timetable/index",
     "_name": "_18cade5a"
   },
   {
-    "name": "itinerary-test",
+    "name": "about___fr",
+    "path": "/fr/about",
+    "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\about\\\\index.vue",
+    "chunkName": "pages/about/index",
+    "_name": "_5fde20ee"
+  },
+  {
+    "name": "contact___fr",
+    "path": "/fr/contact",
+    "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\contact\\\\index.vue",
+    "chunkName": "pages/contact/index",
+    "_name": "_656a238a"
+  },
+  {
+    "name": "itinerary___fr",
+    "path": "/fr/itinerary",
+    "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\itinerary\\\\index.vue",
+    "chunkName": "pages/itinerary/index",
+    "_name": "_64150fa0"
+  },
+  {
+    "name": "login___fr",
+    "path": "/fr/login",
+    "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\login.vue",
+    "chunkName": "pages/login",
+    "_name": "_24d992f0"
+  },
+  {
+    "name": "register___fr",
+    "path": "/fr/register",
+    "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\register.vue",
+    "chunkName": "pages/register",
+    "_name": "_01a35fec"
+  },
+  {
+    "name": "timetable___fr",
+    "path": "/fr/timetable",
+    "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\timetable\\\\index.vue",
+    "chunkName": "pages/timetable/index",
+    "_name": "_18cade5a"
+  },
+  {
+    "name": "itinerary-test___en",
     "path": "/itinerary/test",
     "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\itinerary\\\\test.vue",
     "chunkName": "pages/itinerary/test",
     "_name": "_787190b8"
   },
   {
-    "name": "index",
+    "name": "itinerary-test___fr",
+    "path": "/fr/itinerary/test",
+    "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\itinerary\\\\test.vue",
+    "chunkName": "pages/itinerary/test",
+    "_name": "_787190b8"
+  },
+  {
+    "name": "index___en",
     "path": "/",
     "component": "H:\\\\IT_Projects\\\\2021\\\\TransportApp\\\\TransportApp\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
