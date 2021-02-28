@@ -25,11 +25,11 @@
             <i class="fas fa-user mr-2"></i>
             <div v-if="$auth.loggedIn">
               {{ $auth.user.name }}
-              <a href="/logout">Logout</a>
+              <a href="/logout">{{$t('logout')}}</a>
             </div>
             <div v-else>
-              <a href="/login" class="highlight-text font-bold">Connect</a>
-              <a href="/register" class="text-gray-700">Register</a>
+              <a href="/login" class="highlight-text font-bold">{{$t('login')}}</a>
+              <a href="/register" class="text-gray-700">{{$t('register')}}</a>
             </div>
           </div>
         </div>
@@ -37,10 +37,10 @@
         <div
           class="navbar flex text-gray-700 text-xl space-x-6 font-medium"
         >
-          <NuxtLink to="/itinerary">Itinerary</NuxtLink>
-          <NuxtLink to="/timetable" class="">Timetable</NuxtLink>
-          <NuxtLink to="/about" class="">About</NuxtLink>
-          <NuxtLink to="/contact" class="text-orange-400">Contact me!</NuxtLink>
+          <NuxtLink to="/itinerary">{{$t('itinerary')}}</NuxtLink>
+          <NuxtLink to="/timetable" class="">{{$t('timetable')}}</NuxtLink>
+          <NuxtLink to="/about" class="">{{$t('about')}}</NuxtLink>
+          <NuxtLink to="/contact" class="text-orange-400">{{$t('contactMe')}}</NuxtLink>
         </div>
       </div>
     </div>

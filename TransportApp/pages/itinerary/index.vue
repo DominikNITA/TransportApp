@@ -5,7 +5,7 @@
         id="itinerary-form-wrapper"
         class="main-bg text-gray-300 px-6 py-2 flex flex-col"
       >
-        <h3 class="font-bold text-4xl text-center pb-6">Where to?</h3>
+        <h3 class="font-bold text-4xl text-center pb-6">{{$t('itineraryFormTitle')}}</h3>
         <form
           id="itinerary"
           method="post"
@@ -23,20 +23,20 @@
             <StationInput
               :model="from"
               placeholder="station, place"
-              label="From"
+              :label="$t('from')"
               @input="changeFromStation($event)"
             />
             <StationInput
               :model="to"
               placeholder="station, place"
-              label="To"
+              :label="$t('to')"
               @input="changeToStation($event)"
             />
           </p>
           <p>
             <Toggle
-              firstOption="Leave at"
-              secondOption="Arrive at"
+              :firstOption="$t('leaveAt')"
+              :secondOption="$t('arriveAt')"
               :model="isDateArrival"
               @change="changeIsDateArrival($event)"
             ></Toggle>
@@ -45,7 +45,7 @@
             <button
               type="submit"
               class="w-full py-3 rounded main-text font-semibold text-2xl bg-white"
-            >Let's go</button>
+            >{{$t('itineraryFormSubmit')}}</button>
           </p>
         </form>
       </div>

@@ -1,3 +1,17 @@
 {
-    "message": "Hello!"
+    "message": "Hello!",
+    "itinerary": "Itinerary",
+    "timetable": "Timetable",
+    "about": "About",
+    "contactMe": "Contact me!",
+    "home": "Home",
+    "login": "Connect",
+    "register": "Register",
+    "logout": "Logout",
+    "itineraryFormTitle": "Where to ?",
+    "from": "From",
+    "to": "To",
+    "leaveAt": "Leave at",
+    "arriveAt": "Arrive at",
+    "itineraryFormSubmit": "Let's go"
 }
