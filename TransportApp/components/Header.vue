@@ -16,31 +16,38 @@
             <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
           </div>
           <div class="language flex justify-center">
-            <select name="lang" id="lang">
-              <option value="en">English</option>
-              <option value="fr">French</option>
+            <select v-model="$i18n.locale">
+              <option
+                v-for="lang in $i18n.locales"
+                :key="lang.code"
+                :value="lang.code"
+              >
+                {{ lang.name }}
+              </option>
             </select>
           </div>
           <div class="profile flex justify-center items-center">
             <i class="fas fa-user mr-2"></i>
             <div v-if="$auth.loggedIn">
               {{ $auth.user.name }}
-              <a href="/logout">{{$t('logout')}}</a>
+              <a href="/logout">{{ $t('logout') }}</a>
             </div>
             <div v-else>
-              <a href="/login" class="highlight-text font-bold">{{$t('login')}}</a>
-              <a href="/register" class="text-gray-700">{{$t('register')}}</a>
+              <a href="/login" class="highlight-text font-bold">{{
+                $t('login')
+              }}</a>
+              <a href="/register" class="text-gray-700">{{ $t('register') }}</a>
             </div>
           </div>
         </div>
         <hr class="" />
-        <div
-          class="navbar flex text-gray-700 text-xl space-x-6 font-medium"
-        >
-          <NuxtLink to="/itinerary">{{$t('itinerary')}}</NuxtLink>
-          <NuxtLink to="/timetable" class="">{{$t('timetable')}}</NuxtLink>
-          <NuxtLink to="/about" class="">{{$t('about')}}</NuxtLink>
-          <NuxtLink to="/contact" class="text-orange-400">{{$t('contactMe')}}</NuxtLink>
+        <div class="navbar flex text-gray-700 text-xl space-x-6 font-medium">
+          <NuxtLink to="/itinerary">{{ $t('itinerary') }}</NuxtLink>
+          <NuxtLink to="/timetable" class="">{{ $t('timetable') }}</NuxtLink>
+          <NuxtLink to="/about" class="">{{ $t('about') }}</NuxtLink>
+          <NuxtLink to="/contact" class="text-orange-400">{{
+            $t('contactMe')
+          }}</NuxtLink>
         </div>
       </div>
     </div>
