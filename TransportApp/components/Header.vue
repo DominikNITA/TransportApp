@@ -2,7 +2,7 @@
   <div ref="headerBar" class="flex justify-center items-center w-full bg-white">
     <div class="central-part flex flex-row justify-between w-full">
       <div class="flex-auto items-center justify-center">
-        <NuxtLink to="/" id="logo">
+        <NuxtLink :to="localePath('/')" id="logo">
           <Logo />
         </NuxtLink>
       </div>
@@ -16,31 +16,38 @@
             <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
           </div>
           <div class="language flex justify-center">
-            <select name="lang" id="lang">
-              <option value="en">English</option>
-              <option value="fr">French</option>
+            <select v-model="$i18n.locale">
+              <option
+                v-for="lang in $i18n.locales"
+                :key="lang.code"
+                :value="lang.code"
+              >
+                {{ lang.name }}
+              </option>
             </select>
           </div>
           <div class="profile flex justify-center items-center">
             <i class="fas fa-user mr-2"></i>
             <div v-if="$auth.loggedIn">
               {{ $auth.user.name }}
-              <a href="/logout">Logout</a>
+              <a href="/logout">{{ $t('logout') }}</a>
             </div>
             <div v-else>
-              <a href="/login" class="highlight-text font-bold">Connect</a>
-              <a href="/register" class="text-gray-700">Register</a>
+              <a href="/login" class="highlight-text font-bold">{{
+                $t('login')
+              }}</a>
+              <a href="/register" class="text-gray-700">{{ $t('register') }}</a>
             </div>
           </div>
         </div>
         <hr class="" />
-        <div
-          class="navbar flex pt-5 text-gray-700 text-xl space-x-6 font-medium"
-        >
-          <NuxtLink to="/itinerary">Itinerary</NuxtLink>
-          <NuxtLink to="/timetable" class="">Timetable</NuxtLink>
-          <NuxtLink to="/about" class="">About</NuxtLink>
-          <NuxtLink to="/contact" class="text-orange-400">Contact me!</NuxtLink>
+        <div class="navbar flex text-gray-700 text-xl space-x-6 font-medium">
+          <NuxtLink :to="localePath('/itinerary')">{{ $t('itinerary') }}</NuxtLink>
+          <NuxtLink :to="localePath('/timetable')" class="">{{ $t('timetable') }}</NuxtLink>
+          <NuxtLink :to="localePath('/about')" class="">{{ $t('about') }}</NuxtLink>
+          <NuxtLink :to="localePath('/contact')" class="text-orange-400">{{
+            $t('contactMe')
+          }}</NuxtLink>
         </div>
       </div>
     </div>
@@ -79,9 +86,10 @@ export default {
 a.nuxt-link-active:not(#logo) {
   border-bottom-width: 5px;
   border-color: var(--highlight-color);
+  padding-bottom: calc(1.25rem - 5px);
 }
 .navbar * {
-  padding-bottom: 1.25rem;
+  padding: 1.25rem 0;
   font-size: 1.1875em;
 }
 

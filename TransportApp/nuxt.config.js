@@ -1,3 +1,5 @@
+import i18n from './i18n'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -34,6 +36,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
     '@nuxt/http',
+    'nuxt-i18n',
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
@@ -49,9 +52,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
-  serverMiddleware: {
-    '/api': '~/api',
-  },
+  serverMiddleware: [{ path: '/api', handler: '~/api/index.js' }],
 
   /*
    ** For deployment you might want to edit host and port
@@ -64,5 +65,22 @@ export default {
   http: {
     //https://http.nuxtjs.org/options
     port: 3001,
+  },
+
+  //Internationalization settings
+  i18n: {
+    vueI18nLoader: true,
+    defaultLocale: 'en',
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+      },
+      {
+        code: 'fr',
+        name: 'Français',
+      },
+    ],
+    vueI18n: i18n,
   },
 }

@@ -1,0 +1,17 @@
+{
+    "message": "Bonjour",
+    "itinerary": "Itinéraires",
+    "timetable": "Horaires",
+    "about": "Informations",
+    "contactMe": "Contact me!",
+    "home": "Accueil",
+    "login": "Se connecter",
+    "register": "Creer un compte",
+    "logout": "Se deconnecter",
+    "itineraryFormTitle": "Où allons-nous ?",
+    "from": "De",
+    "to": "A",
+    "leaveAt": "Départ",
+    "arriveAt": "Arrivée",
+    "itineraryFormSubmit": "C'est parti"
+}

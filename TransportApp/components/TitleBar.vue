@@ -19,15 +19,17 @@
         <div class="flex items-center space-x-2 text-sm">
           <NuxtLink to="/">Home</NuxtLink>
           <div
-            v-for="path in pathPages()"
+            v-for="path in pathPages"
             v-bind:key="path.name"
             class="flex space-x-2 items-center"
           >
             <span class="dot rounded-full w-1 h-1"></span>
-            <NuxtLink :to="path.url" class="font-medium">{{ path.name }}</NuxtLink>
+            <NuxtLink :to="path.url" class="font-medium">{{
+              path.name
+            }}</NuxtLink>
           </div>
         </div>
-        <WeatherWidget/>
+        <WeatherWidget />
       </div>
     </div>
   </div>
@@ -37,19 +39,24 @@
 import WeatherWidget from './WeatherWidget.vue'
 export default {
   components: { WeatherWidget },
-  methods: {
+  computed: {
     pathPages: function () {
       const res = []
       const pages = (this.$route.path + '').split('/')
       for (let index = 1; index < pages.length; index++) {
+        //Skip language specific part of path
+        if(index == 1 && pages[index].length == 2) continue;
+        
         const page = pages[index]
         res.push({
           name: this.firstToUpper(page),
-          url: pages.slice(0, index+1).join('/'),
+          url: pages.slice(0, index + 1).join('/'),
         })
       }
       return res
     },
+  },
+  methods: {
     firstToUpper: function (text) {
       return text.charAt(0).toUpperCase() + text.slice(1)
     },
@@ -59,8 +66,7 @@ export default {
       if (page.length + '' <= 1) return 'Home'
       return this.firstToUpper(page)
     },
-  },
-  computed: {},
+  }
 }
 </script>
 
@@ -68,19 +74,19 @@ export default {
 a.nuxt-link-exact-active {
   color: black;
   font-weight: 700;
-  border: 0
+  border: 0;
 }
 
-.dot{
+.dot {
   background-color: var(--highlight-color);
 }
 
-#side-panel{
+#side-panel {
   background-color: var(--highlight-color);
   min-height: 8rem;
 }
 
-.sticky + #title-bar{
+.sticky + #title-bar {
   padding-top: 8.5rem;
 }
 </style>
