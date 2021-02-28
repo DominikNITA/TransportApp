@@ -34,6 +34,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
     '@nuxt/http',
+    'nuxt-i18n',
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
