@@ -12,7 +12,7 @@
 <script>
 export default {
   data() {
-    return { weatherData: { minTemp: -1, maxTemp: 15 } }
+    return { weatherData: { minTemp: '_', maxTemp: '_' } }
   },
   async mounted() {
     this.weatherData = await this.$http.$get('/api/weather')

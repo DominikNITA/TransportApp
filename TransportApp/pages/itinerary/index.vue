@@ -42,11 +42,10 @@
             ></Toggle>
           </p>
           <p>
-            <input
+            <button
               type="submit"
-              value="Let's go"
-              class="w-full py-3 rounded main-text font-semibold text-2xl"
-            />
+              class="w-full py-3 rounded main-text font-semibold text-2xl bg-white"
+            >Let's go</button>
           </p>
         </form>
       </div>

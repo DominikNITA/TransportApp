@@ -35,7 +35,7 @@
         </div>
         <hr class="" />
         <div
-          class="navbar flex pt-5 text-gray-700 text-xl space-x-6 font-medium"
+          class="navbar flex text-gray-700 text-xl space-x-6 font-medium"
         >
           <NuxtLink to="/itinerary">Itinerary</NuxtLink>
           <NuxtLink to="/timetable" class="">Timetable</NuxtLink>
@@ -79,9 +79,10 @@ export default {
 a.nuxt-link-active:not(#logo) {
   border-bottom-width: 5px;
   border-color: var(--highlight-color);
+  padding-bottom: calc(1.25rem - 5px);
 }
 .navbar * {
-  padding-bottom: 1.25rem;
+  padding: 1.25rem 0;
   font-size: 1.1875em;
 }
 
