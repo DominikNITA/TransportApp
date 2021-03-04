@@ -10,9 +10,8 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [{ rel: 'icon', type: 'image/png', href: '/icon-small.png' }],
-    script: [{ src: 'https://kit.fontawesome.com/648c2563d3.js' }],
+    script: [{ src: 'https://kit.fontawesome.com/648c2563d3.js' },{src: 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js'}],
   },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
