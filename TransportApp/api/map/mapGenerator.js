@@ -5,8 +5,8 @@ const generateNewMap = async function (options) {
   const width = options.width
   const height = options.height
   const targetStationsCount = options.stationsCount
-  const averageDistance = 400
-  const mergeDistance = 150
+  const averageDistance = options.averageDistance
+  const mergeDistance = options.mergeDistance
   const stationsNames = [
     ...new Set(await getRandomStationsNames(targetStationsCount * 2)),
   ]
@@ -88,7 +88,13 @@ const generateNewMap = async function (options) {
     }
   }
   //console.log(stations)
-  return lines
+  return {
+    lines: lines,
+    stations: stations,
+    width: width,
+    height: height,
+    createdOn: Date.now(),
+  }
 }
 
 function distance(p1, p2) {

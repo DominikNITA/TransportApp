@@ -1,41 +1,52 @@
 <template>
   <div id="map-wrap">
     <client-only>
-      <l-map :zoom="13" :center="[47.41322, -1.219482]">
-        <l-tile-layer
-          url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
-        ></l-tile-layer>
-        <l-circle-marker :lat-lng="[47.41322, -1.219482]">
-          <l-tooltip content="Test" :options="options"></l-tooltip>
+      <l-map :min-zoom="-2.5" :crs="crs" v-if="mapData" :max-bounds="bounds">
+        <l-image-overlay :url="url" :bounds="bounds" />
+        <l-circle-marker
+          v-for="station in mapData.stations"
+          :key="station.name"
+          :lat-lng="$L.latLng(station.position.y, station.position.x)"
+        >
+          <l-tooltip :content="station.name" :options="options"></l-tooltip>
         </l-circle-marker>
+        <l-polyline v-for="line in mapData.lines" :key="line.number" :lat-lngs="line.stations.map(s => $L.latLng(s.position.y, s.position.x))" :color="line.color"/>
       </l-map>
     </client-only>
   </div>
 </template>
 
 <script>
-// import VueP5 from 'vue-p5';
+import { CRS } from 'leaflet'
 export default {
   data() {
     return {
-      options : {
-        permanent : true
-      }
+      options: {
+        permanent: false,
+      },
+      url: '/map.jpeg',
+      bounds: [
+        [0, 0],
+        [2000,2000]
+      ],
+      mapData: {
+        stations: [
+          { position: { x: 200, y: 300 } },
+          { position: { x: 0, y: 0 } },
+        ],
+      },
+      crs: CRS.Simple,
+      minZoom: -2,
     }
   },
-  // methods: {
-  //   setup(sketch) {
-  //     if (!process.browser) {
-  //       return
-  //     }
-  //     sketch.resizeCanvas(200, 200)
-  //     sketch.background('green')
-  //   },
-  //   draw(sketch) {},
-  // },
-  // render(h) {
-  //   return h(VueP5, { on: this })
-  // },
+  async mounted() {
+    try {
+      this.mapData = await this.$http.$get('/api/map')
+      console.log(this.mapData)
+    } catch (error) {
+      console.error(error)
+    }
+  },
 }
 </script>
 
