@@ -44,6 +44,8 @@ const generateNewMap = async function (options) {
       )
       if (stationToMerge) {
         line.stations.push(stationToMerge)
+        //Modify station directly in array: https://stackoverflow.com/a/61586616/13251554
+        stations.find( s => s.id === stationToMerge.id && (s.linesNumbers.push(line.number), true))
         lastStationPosition = stationToMerge.position
         console.log('Merge occured for station: ' + stationToMerge.name)
       } else {
@@ -51,43 +53,24 @@ const generateNewMap = async function (options) {
         const station = createNewStation(
           stationPosition,
           stationsNames,
-          stations.length + tempStations.length
+          stations.length + tempStations.length,
+          line.number
         )
         tempStations.push(station)
         line.stations.push(station)
         lastStationPosition = stationPosition
       }
-      // if (tempStations.length > 1) {
-      //   console.log(
-      //     '\n\nCurrent stations count: ' +
-      //       (stations.length + tempStations.length)
-      //   )
-      //   console.log('Current line stations: ')
-      //   console.log(line.stations)
-      //   console.log('EndPoint: ')
-      //   console.log(endPoint)
-      //   console.log(
-      //     'Distance to endPoint: ' + distance(endPoint, lastStationPosition)
-      //   )
-      // }
-      // console.log(
-      //   'First condition: ' +
-      //     (targetStationsCount - stations.length - tempStations.length)
-      // )
-      // console.log(
-      //   'Second condition: ' +
-      //     distance(endPoint, lastStationPosition) +
-      //     ' < ' +
-      //     300
-      // )
     }
 
     if (line.stations.length > 1) {
       lines.push(line)
       stations.push(...tempStations)
     }
+    else{
+      stations.forEach(s => s.linesNumbers = s.linesNumbers.filter(n => n !== line.number))
+    } 
   }
-  //console.log(stations)
+  console.log(`Generated ${lines.length} lines`)
   return {
     lines: lines,
     stations: stations,
@@ -162,10 +145,12 @@ async function getRandomStationsNames(count) {
   }
 }
 
-function createNewStation(position, stationsNames, index) {
+function createNewStation(position, stationsNames, index, lineNumber) {
   return {
     position: position,
     name: stationsNames[index % stationsNames.length],
+    id: index,
+    linesNumbers: [lineNumber]
   }
 }
 

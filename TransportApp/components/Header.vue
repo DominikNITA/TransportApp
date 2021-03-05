@@ -46,7 +46,7 @@
           <NuxtLink :to="localePath('/timetable')" class="">{{ $t('timetable') }}</NuxtLink>
           <NuxtLink :to="localePath('/about')" class="">{{ $t('about') }}</NuxtLink>
           <NuxtLink :to="localePath('/contact')" class="text-orange-400">{{
-            $t('contactMe')
+            $t('contact')
           }}</NuxtLink>
         </div>
       </div>
@@ -97,5 +97,6 @@ a.nuxt-link-active:not(#logo) {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 2000
 }
 </style>

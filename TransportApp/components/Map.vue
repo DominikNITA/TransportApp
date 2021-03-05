@@ -8,7 +8,7 @@
           :key="station.name"
           :lat-lng="$L.latLng(station.position.y, station.position.x)"
         >
-          <l-tooltip :content="station.name" :options="options"></l-tooltip>
+          <l-tooltip :content="station.name+ ' ' +station.linesNumbers.join(' ')" :options="options"></l-tooltip>
         </l-circle-marker>
         <l-polyline v-for="line in mapData.lines" :key="line.number" :lat-lngs="line.stations.map(s => $L.latLng(s.position.y, s.position.x))" :color="line.color"/>
       </l-map>
@@ -31,8 +31,7 @@ export default {
       ],
       mapData: {
         stations: [
-          { position: { x: 200, y: 300 } },
-          { position: { x: 0, y: 0 } },
+          { position: { x: 200, y: 300 }, linesNumbers: [1,2,3]},
         ],
       },
       crs: CRS.Simple,
