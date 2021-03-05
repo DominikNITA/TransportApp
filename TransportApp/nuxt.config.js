@@ -36,6 +36,7 @@ export default {
     '@nuxtjs/auth-next',
     '@nuxt/http',
     'nuxt-i18n',
+    'nuxt-leaflet',
   ],
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

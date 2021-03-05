@@ -49,7 +49,7 @@
           </p>
         </form>
       </div>
-      <div id="map-wrapper"></div>
+      <Map></Map>
     </div>
     <NuxtLink
       :to="localePath('/itinerary/test')"
@@ -95,8 +95,5 @@ export default {
 #itinerary-form-wrapper {
   min-width: 22rem;
 }
-#map-wrapper {
-  min-width: 40rem;
-  min-height: 55rem;
-}
+
 </style>

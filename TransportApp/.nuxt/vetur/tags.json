@@ -8,6 +8,9 @@
   "Logo": {
     "description": "Auto imported from components/Logo.vue"
   },
+  "Map": {
+    "description": "Auto imported from components/Map.vue"
+  },
   "StationInput": {
     "description": "Auto imported from components/StationInput.vue"
   },

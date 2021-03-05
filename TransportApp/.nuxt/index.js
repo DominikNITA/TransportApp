@@ -13,6 +13,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 /* Plugins */
 
 import nuxt_plugin_plugin_1db6ccc6 from 'nuxt_plugin_plugin_1db6ccc6' // Source: .\\components\\plugin.js (mode: 'all')
+import nuxt_plugin_nuxtleaflet_1eda8ebc from 'nuxt_plugin_nuxtleaflet_1eda8ebc' // Source: .\\nuxt-leaflet.js (mode: 'client')
 import nuxt_plugin_pluginrouting_13a9dbb0 from 'nuxt_plugin_pluginrouting_13a9dbb0' // Source: .\\nuxt-i18n\\plugin.routing.js (mode: 'all')
 import nuxt_plugin_pluginmain_1eb7a482 from 'nuxt_plugin_pluginmain_1eb7a482' // Source: .\\nuxt-i18n\\plugin.main.js (mode: 'all')
 import nuxt_plugin_http_4fe3f747 from 'nuxt_plugin_http_4fe3f747' // Source: .\\http.js (mode: 'all')
@@ -65,7 +66,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"TransportApp","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fpng","href":"\u002Ficon-small.png"}],"script":[{"src":"https:\u002F\u002Fkit.fontawesome.com\u002F648c2563d3.js"}],"style":[]},
+    head: {"title":"TransportApp","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fpng","href":"\u002Ficon-small.png"}],"script":[{"src":"https:\u002F\u002Fkit.fontawesome.com\u002F648c2563d3.js"},{"src":"https:\u002F\u002Fcdnjs.cloudflare.com\u002Fajax\u002Flibs\u002Fp5.js\u002F1.2.0\u002Fp5.min.js"}],"style":[]},
 
     router,
     nuxt: {
@@ -181,6 +182,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_plugin_1db6ccc6 === 'function') {
     await nuxt_plugin_plugin_1db6ccc6(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_nuxtleaflet_1eda8ebc === 'function') {
+    await nuxt_plugin_nuxtleaflet_1eda8ebc(app.context, inject)
   }
 
   if (typeof nuxt_plugin_pluginrouting_13a9dbb0 === 'function') {
