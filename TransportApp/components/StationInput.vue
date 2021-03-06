@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  props: ['model', 'placeholder', 'label'],
+  props: ['model', 'placeholder', 'label','stations'],
 }
 </script>
 
