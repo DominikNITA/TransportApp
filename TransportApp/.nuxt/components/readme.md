@@ -11,6 +11,7 @@ You can directly use them in pages and other components without the need to impo
 - `<Logo>` | `<logo>` (components/Logo.vue)
 - `<Map>` | `<map>` (components/Map.vue)
 - `<StationInput>` | `<station-input>` (components/StationInput.vue)
+- `<StationPopup>` | `<station-popup>` (components/StationPopup.vue)
 - `<TitleBar>` | `<title-bar>` (components/TitleBar.vue)
 - `<Toggle>` | `<toggle>` (components/Toggle.vue)
 - `<UserAuthForm>` | `<user-auth-form>` (components/UserAuthForm.vue)

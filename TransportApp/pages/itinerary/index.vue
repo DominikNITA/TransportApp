@@ -5,7 +5,9 @@
         id="itinerary-form-wrapper"
         class="main-bg text-gray-300 px-6 py-2 flex flex-col"
       >
-        <h3 class="font-bold text-4xl text-center pb-6">{{$t('itineraryFormTitle')}}</h3>
+        <h3 class="font-bold text-4xl text-center pb-6">
+          {{ $t('itineraryFormTitle') }}
+        </h3>
         <form
           id="itinerary"
           method="post"
@@ -45,11 +47,13 @@
             <button
               type="submit"
               class="w-full py-3 rounded main-text font-semibold text-2xl bg-white"
-            >{{$t('itineraryFormSubmit')}}</button>
+            >
+              {{ $t('itineraryFormSubmit') }}
+            </button>
           </p>
         </form>
       </div>
-      <Map></Map>
+      <Map :networkData="mapData"></Map>
     </div>
     <NuxtLink
       :to="localePath('/itinerary/test')"
@@ -71,6 +75,12 @@ export default {
       to: null,
       isDateArrival: true,
       date: null,
+      mapData:  {
+        stations: [
+          // fake initial data, because vue isn't correctly defering conditional rendering
+          { position: { x: 200, y: 300 }, linesNumbers: [1, 2, 3] },
+        ],
+      }
     }
   },
   methods: {
@@ -88,6 +98,14 @@ export default {
       this.to = newStation
     },
   },
+  async mounted() {
+    try {
+      this.mapData = await this.$http.$get('/api/map')
+      console.log(this.mapData)
+    } catch (error) {
+      console.error(error)
+    }
+  },
 }
 </script>
 
@@ -95,5 +113,4 @@ export default {
 #itinerary-form-wrapper {
   min-width: 22rem;
 }
-
 </style>

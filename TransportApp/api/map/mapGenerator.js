@@ -2,11 +2,11 @@ const { Math } = require('core-js')
 const request = require('request')
 
 const generateNewMap = async function (options) {
-  const width = options.width
-  const height = options.height
-  const targetStationsCount = options.stationsCount
-  const averageDistance = options.averageDistance
-  const mergeDistance = options.mergeDistance
+  const width = options.width ?? 2000
+  const height = options.height ?? 2000
+  const targetStationsCount = options.stationsCount ?? 30
+  const averageDistance = options.averageDistance ?? 400
+  const mergeDistance = options.mergeDistance ?? 300
   const stationsNames = [
     ...new Set(await getRandomStationsNames(targetStationsCount * 2)),
   ]
@@ -62,7 +62,7 @@ const generateNewMap = async function (options) {
       }
     }
 
-    if (line.stations.length > 1) {
+    if (line.stations.length > 2 && !lines.some(l => line.stations.every(s => l.stations.includes(s)))) {
       lines.push(line)
       stations.push(...tempStations)
     }

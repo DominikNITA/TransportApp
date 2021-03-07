@@ -3,6 +3,7 @@ export { default as Header } from '../..\\components\\Header.vue'
 export { default as Logo } from '../..\\components\\Logo.vue'
 export { default as Map } from '../..\\components\\Map.vue'
 export { default as StationInput } from '../..\\components\\StationInput.vue'
+export { default as StationPopup } from '../..\\components\\StationPopup.vue'
 export { default as TitleBar } from '../..\\components\\TitleBar.vue'
 export { default as Toggle } from '../..\\components\\Toggle.vue'
 export { default as UserAuthForm } from '../..\\components\\UserAuthForm.vue'
@@ -13,6 +14,7 @@ export const LazyHeader = import('../..\\components\\Header.vue' /* webpackChunk
 export const LazyLogo = import('../..\\components\\Logo.vue' /* webpackChunkName: "components/logo" */).then(c => c.default || c)
 export const LazyMap = import('../..\\components\\Map.vue' /* webpackChunkName: "components/map" */).then(c => c.default || c)
 export const LazyStationInput = import('../..\\components\\StationInput.vue' /* webpackChunkName: "components/station-input" */).then(c => c.default || c)
+export const LazyStationPopup = import('../..\\components\\StationPopup.vue' /* webpackChunkName: "components/station-popup" */).then(c => c.default || c)
 export const LazyTitleBar = import('../..\\components\\TitleBar.vue' /* webpackChunkName: "components/title-bar" */).then(c => c.default || c)
 export const LazyToggle = import('../..\\components\\Toggle.vue' /* webpackChunkName: "components/toggle" */).then(c => c.default || c)
 export const LazyUserAuthForm = import('../..\\components\\UserAuthForm.vue' /* webpackChunkName: "components/user-auth-form" */).then(c => c.default || c)

@@ -20,6 +20,8 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+
+  /* Color variables */
   --highlight-color: #f6ad55;
   --main-color: #4a5568;
   --central-part-width: 58rem;
