@@ -53,7 +53,7 @@
           </p>
         </form>
       </div>
-      <Map :networkData="mapData"></Map>
+      <Map :networkData="mapData" @destination="changeToStation($event)"></Map>
     </div>
     <NuxtLink
       :to="localePath('/itinerary/test')"
@@ -75,12 +75,12 @@ export default {
       to: null,
       isDateArrival: true,
       date: null,
-      mapData:  {
+      mapData: {
         stations: [
           // fake initial data, because vue isn't correctly defering conditional rendering
           { position: { x: 200, y: 300 }, linesNumbers: [1, 2, 3] },
         ],
-      }
+      },
     }
   },
   methods: {
@@ -95,6 +95,7 @@ export default {
       this.from = newStation
     },
     changeToStation(newStation) {
+      console.log(newStation)
       this.to = newStation
     },
   },

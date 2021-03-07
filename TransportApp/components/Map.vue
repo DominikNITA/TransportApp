@@ -18,7 +18,7 @@
           :key="station.name"
           :lat-lng="$L.latLng(station.position.y, station.position.x)"
         >
-          <StationPopup :station="station" :networkData="networkData"></StationPopup>
+          <StationPopup :station="station" :networkData="networkData" @destination="$emit('destination',$event)"></StationPopup>
         </l-circle-marker>
         <l-polyline
           v-for="line in networkData.lines"
@@ -63,6 +63,7 @@ export default {
     printLineNumber(line) {
       console.log(line.number)
     },
+
   },
 }
 </script>
