@@ -4,18 +4,17 @@
       <div class="stationName">
         {{ this.station.name }}
       </div>
-      <div class="flex">
+      <div class="flex justify-center">
         <div
           class="lineNumber"
           v-for="lineNumber in station.linesNumbers"
           v-bind:key="lineNumber.number"
-          :style="{ 'background-color': '#333fff' }"
+          :style="{ 'background-color': linesColors[lineNumber-1] }"
         >
           {{ lineNumber }}
         </div>
       </div>
       <button
-        ref="dest"
         class="destinationButton btn btn-blue"
         v-on:click="emitDestination()"
       >
@@ -33,6 +32,11 @@ export default {
       options: {
         className: 'test',
       },
+    }
+  },
+  computed:{
+    linesColors : function (){
+      return this.networkData.lines.map(l => l.color)
     }
   },
   methods: {
