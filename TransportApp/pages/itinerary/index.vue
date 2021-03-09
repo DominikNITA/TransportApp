@@ -27,12 +27,14 @@
               placeholder="station, place"
               :label="$t('from')"
               @input="changeFromStation($event)"
+              :data="mapData.stations"
             />
             <StationInput
               :model="to"
               placeholder="station, place"
               :label="$t('to')"
               @input="changeToStation($event)"
+              :data="mapData.stations"
             />
           </p>
           <p>
@@ -71,14 +73,18 @@ export default {
   data() {
     return {
       errors: [],
-      from: null,
-      to: null,
+      from: '',
+      to: '',
       isDateArrival: true,
       date: null,
       mapData: {
         stations: [
           // fake initial data, because vue isn't correctly defering conditional rendering
-          { position: { x: 200, y: 300 }, linesNumbers: [1, 2, 3] },
+          {
+            position: { x: 200, y: 300 },
+            linesNumbers: [1, 2, 3],
+            name: 'Start typing',
+          },
         ],
       },
     }
@@ -113,5 +119,10 @@ export default {
 <style>
 #itinerary-form-wrapper {
   min-width: 22rem;
+}
+
+.dropdown {
+  top: 100%;
+  margin-left: 0 !important;
 }
 </style>

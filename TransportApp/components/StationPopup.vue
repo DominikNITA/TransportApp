@@ -1,6 +1,6 @@
 <template>
   <l-popup :options="options">
-    <div class="popupContent" ref="content">
+    <div class="popupContent">
       <div class="stationName">
         {{ this.station.name }}
       </div>
@@ -9,14 +9,20 @@
           class="lineNumber"
           v-for="lineNumber in station.linesNumbers"
           v-bind:key="lineNumber.number"
-          :style="{ 'background-color': linesColors[lineNumber-1] }"
+          :style="{ 'background-color': linesColors[lineNumber - 1] }"
         >
           {{ lineNumber }}
         </div>
       </div>
       <button
-        class="destinationButton btn btn-blue"
-        v-on:click="emitDestination()"
+        class="p-1 bg-gray-400 m-auto"
+        v-on:click="$emit('change-departure', station.name)"
+      >
+        Set As Departure
+      </button>
+      <button
+        class="p-1 bg-gray-400 m-auto"
+        v-on:click="$emit('destination', station.name)"
       >
         Set As Destination
       </button>
@@ -34,36 +40,10 @@ export default {
       },
     }
   },
-  computed:{
-    linesColors : function (){
-      return this.networkData.lines.map(l => l.color)
-    }
-  },
-  methods: {
-    // getPopupContent() {
-    //   let content = `<div class="stationName">${this.station.name}</div><div class="flex">`
-    //   this.station.linesNumbers.forEach((lineNumber) => {
-    //     content += `<div class="lineNumber" style="background:${
-    //       this.networkData?.lines?.find((l) => l.number === lineNumber)?.color
-    //     }">${lineNumber}</div>`
-    //   })
-    //   content += '</div>'
-    //   content +=
-    //     '<button ref="dest" class="destinationButton btn btn-blue">Set As Destination</button>'
-    //   return content
-    // },
-    emitDestination() {
-      this.$emit('destination', this.station.name)
+  computed: {
+    linesColors: function () {
+      return this.networkData.lines.map((l) => l.color)
     },
-    getLineColor(lineNumber) {
-      this.networkData?.lines?.find((l) => l.number === lineNumber)?.color
-    },
-    // setListeners() {
-    //   console.log(this.$refs.stationPopup)
-    //   this.$refs.stationPopup.$el
-    //     .getElementsByClassName('destinationButton')[0]
-    //     .addEventListener('click', emitDestination)
-    // },
   },
 }
 </script>
@@ -91,5 +71,9 @@ export default {
 
 .leaflet-popup-content-wrapper {
   background-color: var(--main-color);
+}
+.leaflet-popup-content {
+  margin: 10px 7px;
+  width: fit-content !important;
 }
 </style>
