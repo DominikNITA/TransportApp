@@ -55,7 +55,11 @@
           </p>
         </form>
       </div>
-      <Map :networkData="mapData" @destination="changeToStation($event)"></Map>
+      <Map
+        :networkData="mapData"
+        @destination="changeToStation($event)"
+        @change-departure="changeFromStation($event)"
+      ></Map>
     </div>
     <NuxtLink
       :to="localePath('/itinerary/test')"

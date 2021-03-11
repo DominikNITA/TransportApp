@@ -125,7 +125,7 @@ function getRandomColor() {
 
 function getRandomDistinguishableColor(number) {
   const hue = number * 137.508 // use golden angle approximation
-  return `hsl(${hue},60%,60%)`
+  return `hsl(${hue},63%,61%)`
 }
 
 function downloadNames(count) {

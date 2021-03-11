@@ -4,7 +4,7 @@
       <div class="stationName">
         {{ this.station.name }}
       </div>
-      <div class="flex justify-center">
+      <div class="flex justify-center" v-if="linesColors !== undefined">
         <div
           class="lineNumber"
           v-for="lineNumber in station.linesNumbers"
@@ -42,7 +42,8 @@ export default {
   },
   computed: {
     linesColors: function () {
-      return this.networkData.lines.map((l) => l.color)
+      if (this.networkData.lines === undefined) return []
+      return this.networkData?.lines?.map((l) => l.color)
     },
   },
 }
