@@ -4,14 +4,14 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _5fde20ee = () => interopDefault(import('..\\pages\\about\\index.vue' /* webpackChunkName: "pages/about/index" */))
-const _656a238a = () => interopDefault(import('..\\pages\\contact\\index.vue' /* webpackChunkName: "pages/contact/index" */))
-const _5b31efd9 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
-const _64150fa0 = () => interopDefault(import('..\\pages\\itinerary\\index.vue' /* webpackChunkName: "pages/itinerary/index" */))
-const _24d992f0 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
-const _01a35fec = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register" */))
-const _18cade5a = () => interopDefault(import('..\\pages\\timetable\\index.vue' /* webpackChunkName: "pages/timetable/index" */))
-const _787190b8 = () => interopDefault(import('..\\pages\\itinerary\\test.vue' /* webpackChunkName: "pages/itinerary/test" */))
+const _62029886 = () => interopDefault(import('..\\pages\\about\\index.vue' /* webpackChunkName: "pages/about/index" */))
+const _4fa0405a = () => interopDefault(import('..\\pages\\contact\\index.vue' /* webpackChunkName: "pages/contact/index" */))
+const _ca3b597e = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages/index" */))
+const _99373870 = () => interopDefault(import('..\\pages\\itinerary\\index.vue' /* webpackChunkName: "pages/itinerary/index" */))
+const _6489f658 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages/login" */))
+const _ddb938f8 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages/register" */))
+const _038c6c1c = () => interopDefault(import('..\\pages\\timetable\\index.vue' /* webpackChunkName: "pages/timetable/index" */))
+const _1580790c = () => interopDefault(import('..\\pages\\itinerary\\test.vue' /* webpackChunkName: "pages/itinerary/test" */))
 
 const emptyFn = () => {}
 
@@ -26,67 +26,67 @@ export const routerOptions = {
 
   routes: [{
     path: "/about",
-    component: _5fde20ee,
+    component: _62029886,
     name: "about___en"
   }, {
     path: "/contact",
-    component: _656a238a,
+    component: _4fa0405a,
     name: "contact___en"
   }, {
     path: "/fr",
-    component: _5b31efd9,
+    component: _ca3b597e,
     name: "index___fr"
   }, {
     path: "/itinerary",
-    component: _64150fa0,
+    component: _99373870,
     name: "itinerary___en"
   }, {
     path: "/login",
-    component: _24d992f0,
+    component: _6489f658,
     name: "login___en"
   }, {
     path: "/register",
-    component: _01a35fec,
+    component: _ddb938f8,
     name: "register___en"
   }, {
     path: "/timetable",
-    component: _18cade5a,
+    component: _038c6c1c,
     name: "timetable___en"
   }, {
     path: "/fr/about",
-    component: _5fde20ee,
+    component: _62029886,
     name: "about___fr"
   }, {
     path: "/fr/contact",
-    component: _656a238a,
+    component: _4fa0405a,
     name: "contact___fr"
   }, {
     path: "/fr/itinerary",
-    component: _64150fa0,
+    component: _99373870,
     name: "itinerary___fr"
   }, {
     path: "/fr/login",
-    component: _24d992f0,
+    component: _6489f658,
     name: "login___fr"
   }, {
     path: "/fr/register",
-    component: _01a35fec,
+    component: _ddb938f8,
     name: "register___fr"
   }, {
     path: "/fr/timetable",
-    component: _18cade5a,
+    component: _038c6c1c,
     name: "timetable___fr"
   }, {
     path: "/itinerary/test",
-    component: _787190b8,
+    component: _1580790c,
     name: "itinerary-test___en"
   }, {
     path: "/fr/itinerary/test",
-    component: _787190b8,
+    component: _1580790c,
     name: "itinerary-test___fr"
   }, {
     path: "/",
-    component: _5b31efd9,
+    component: _ca3b597e,
     name: "index___en"
   }],
 

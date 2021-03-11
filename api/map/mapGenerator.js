@@ -45,7 +45,11 @@ const generateNewMap = async function (options) {
       if (stationToMerge) {
         line.stations.push(stationToMerge)
         //Modify station directly in array: https://stackoverflow.com/a/61586616/13251554
-        stations.find( s => s.id === stationToMerge.id && (s.linesNumbers.push(line.number), true))
+        stations.find(
+          (s) =>
+            s.id === stationToMerge.id &&
+            (s.linesNumbers.push(line.number), true)
+        )
         lastStationPosition = stationToMerge.position
         console.log('Merge occured for station: ' + stationToMerge.name)
       } else {
@@ -62,13 +66,18 @@ const generateNewMap = async function (options) {
       }
     }
 
-    if (line.stations.length > 2 && !lines.some(l => line.stations.every(s => l.stations.includes(s)))) {
+    if (
+      line.stations.length > 2 &&
+      !lines.some((l) => line.stations.every((s) => l.stations.includes(s)))
+    ) {
       lines.push(line)
       stations.push(...tempStations)
+    } else {
+      stations.forEach(
+        (s) =>
+          (s.linesNumbers = s.linesNumbers.filter((n) => n !== line.number))
+      )
     }
-    else{
-      stations.forEach(s => s.linesNumbers = s.linesNumbers.filter(n => n !== line.number))
-    } 
   }
   console.log(`Generated ${lines.length} lines`)
   return {
@@ -92,10 +101,11 @@ function createRandomPoint(maxX, maxY) {
 }
 
 function createNewLine(lines) {
-  //Generate color
-  const lineColor = getRandomColor()
   //Get number
   const lineNumber = lines.length + 1
+
+  //Generate color
+  const lineColor = getRandomDistinguishableColor(lineNumber)
   //Insert to the array
   return {
     number: lineNumber,
@@ -111,6 +121,11 @@ function getRandomColor() {
     color += letters[Math.floor(Math.random() * 16)]
   }
   return color
+}
+
+function getRandomDistinguishableColor(number) {
+  const hue = number * 137.508 // use golden angle approximation
+  return `hsl(${hue},60%,60%)`
 }
 
 function downloadNames(count) {
@@ -150,7 +165,7 @@ function createNewStation(position, stationsNames, index, lineNumber) {
     position: position,
     name: stationsNames[index % stationsNames.length],
     id: index,
-    linesNumbers: [lineNumber]
+    linesNumbers: [lineNumber],
   }
 }
 
