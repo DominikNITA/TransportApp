@@ -1,9 +1,9 @@
 <template>
   <div class="weather space-x-1">
     <i class="fas fa-cloud-sun"></i>
-    <span class="text-red-300 font-bold">{{ weatherData.maxTemp }}&#176;C</span>
+    <span class="text-red-300 font-bold">{{ weatherData.maxTemperature }}&#176;C</span>
     <span class="text-blue-300 font-bold"
-      >{{ weatherData.minTemp }}&#176;C</span
+      >{{ weatherData.minTemperature }}&#176;C</span
     >
     <span class="font-medium">ImagiTown</span>
   </div>
@@ -15,7 +15,7 @@ export default {
     return { weatherData: { minTemp: '_', maxTemp: '_' } }
   },
   async mounted() {
-    this.weatherData = await this.$http.$get('/api/weather')
+    this.weatherData = await this.$http.$get('/weather')
   },
   // async asyncData() {
   //   //const data = await $http.$get('/api/weather')

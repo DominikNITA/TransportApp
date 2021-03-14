@@ -2,7 +2,6 @@ const express = require('express')
 const cors = require('cors')
 const app = express()
 
-const hello = require('./hello')
 const weather = require('./weather')
 const mapApi = require('./map/index')
 
