@@ -26,6 +26,7 @@
     "nuxt-i18n": "^6.20.3",
     "nuxt-leaflet": "0.0.25",
     "sync-request": "^6.1.0",
+    "typeorm": "^0.2.31",
     "vue-click-outside": "^1.1.0",
     "vue-p5": "^0.8.3",
     "vue-tailwind": "^2.1.3"
